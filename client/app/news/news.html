@@ -1,0 +1,29 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<section class="container">
+
+  <div class="col-md-12 featured-sites container-fluid">
+    <h1 class="page-header">News:</h1>
+    <div ng-repeat="newsarticle in awesomeNewsarticles">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="largenewspic container-fluid container-inset">
+           <h1>{{newsarticle.name}}</h1>
+           <img src={{newsarticle.picture}}>
+           <h3>{{newsarticle.author}}  {{newsarticle.createddate}}</h3>
+           <p>{{newsarticle.content}}</p>
+         </div>
+       </div>
+     </div>
+
+     <form class="newsarticle-form">
+      <label>Syncs in realtime across clients</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newNewsarticle">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="addNewsarticle()">Add New</button>
+        </span>
+      </p>
+    </form>
+  </div>
+</section>
+<div ng-include="'components/footer/footer.html'"></div>
