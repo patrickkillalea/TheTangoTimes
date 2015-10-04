@@ -3,7 +3,7 @@
 <section class="container">
 
   <!-- Main News Section -->
-
+  <div class="container-fluid">
     <!-- Primary News Carousel -->
     <div class="col-md-6 col-sm-12 col-xs-12 container-inset">
       <div class="featuredpic featured-sites ">
@@ -14,8 +14,9 @@
     <!-- End Primary News Carousel -->
 
     <!-- Latest News -->
-    <div class="col-md-6 col-sm-12 col-xs-12">
-      <section data-ng-init="find()">
+    <section data-ng-init="find()">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+
         <ul class="navigation">
           <li data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:8">
             <a data-ng-href="/news/{{newsarticle._id}}">
@@ -24,15 +25,17 @@
             </a>
           </li>
         </ul>
-      </section>
-    </div>
-    <!-- End Latest News -->
+      </div> 
+
+  </section>
+  </div>
+  <!-- End Latest News -->
   <!-- End Main News Section -->
 
   <!-- Article Pictures Primary -->
   <div class="col-md-12 container-fluid">
 
-    <div id="header"><h2>Videos</h2></div>
+    <div class="header"><h2>Videos</h2></div>
     <div class="container-fluid container-inset">
       <div data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:4">
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -50,7 +53,7 @@
   <!-- Article Pictures Secondary -->
   <div class="col-md-12 container-fluid">
 
-    <div id="header"><h2>Videos</h2></div>
+    <div class="header"><h2>Videos</h2></div>
     <div class="container-fluid container-inset">
       <div data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:4">
         <div class="col-md-3 col-sm-6 col-xs-12">
