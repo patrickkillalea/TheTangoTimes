@@ -18,7 +18,7 @@ module.exports = {
     uri:    process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
-            // 'mongodb://localhost/thetangotimes'
+             //'mongodb://localhost/thetangotimes'
             'mongodb://patrickkillalea:ilwp2000@ds055802.mongolab.com:55802/dota2newsdb'
   }
 };
