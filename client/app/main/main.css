@@ -55,11 +55,6 @@
   transform: perspective(350px) rotateX(0deg);
 }
 
-.container-inset {
-  background-color:#081f2c;
-  color:white;
-  padding-top: 15px;
-}
 
 .featuredpic{
   height:300px;
@@ -67,6 +62,7 @@
 .featuredpic img{
   max-width:100%;
   max-height:100%;
+
 }
 
 .trick {
@@ -88,6 +84,3 @@
   background-image: linear-gradient(to bottom, #005200 0%, #2E782E 100%);
 }
 
-.backgroundcolor{
-  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/always_grey.png");
-}

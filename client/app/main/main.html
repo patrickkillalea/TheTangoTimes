@@ -1,78 +1,79 @@
 <div class="backgroundcolor">
 
-<div ng-include="'components/navbar/navbar.html'"></div>
+  <div ng-include="'components/navbar/navbar.html'"></div>
+  <section class="container containercolor">
+    <section class="container">
 
-<section class="container">
+      <!-- Main News Section -->
+      <div class="container-fluid">
+        <!-- Primary News Carousel -->
+        <div class="col-md-6 col-sm-12 col-xs-12 container-inset">
+          <div class="featuredpic featured-sites ">
+            <img src="http://hdwallpaper1920x1080.com/wp-content/uploads/2015/02/Shadow-Fiend-Dota-2-Wallpaper.jpg">
+          </div>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <!-- End Primary News Carousel -->
 
-  <!-- Main News Section -->
-  <div class="container-fluid">
-    <!-- Primary News Carousel -->
-    <div class="col-md-6 col-sm-12 col-xs-12 container-inset">
-      <div class="featuredpic featured-sites ">
-        <img src="http://hdwallpaper1920x1080.com/wp-content/uploads/2015/02/Shadow-Fiend-Dota-2-Wallpaper.jpg">
+        <!-- Latest News -->
+        <section data-ng-init="find()">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+
+            <ul class="navigation">
+              <li data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:8">
+                <a data-ng-href="/news/{{newsarticle._id}}">
+                  <span>{{newsarticle.name}}</span> -
+                  <span>{{newsarticle.author}}</span>
+                </a>
+              </li>
+            </ul>
+          </div> 
+
+        </section>
       </div>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-    </div>
-    <!-- End Primary News Carousel -->
+      <!-- End Latest News -->
+      <!-- End Main News Section -->
 
-    <!-- Latest News -->
-    <section data-ng-init="find()">
-      <div class="col-md-6 col-sm-12 col-xs-12">
+      <!-- Article Pictures Primary -->
+      <div class="col-md-12 container-fluid">
 
-        <ul class="navigation">
-          <li data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:8">
-            <a data-ng-href="/news/{{newsarticle._id}}">
-              <span>{{newsarticle.name}}</span> -
-              <span>{{newsarticle.author}}</span>
-            </a>
-          </li>
-        </ul>
-      </div> 
+        <div class="header"><h2>Other Stuff</h2></div>
+        <div class="container-fluid container-inset">
+          <div data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:4">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="featuredpic featured-sites">
+                <img src={{newsarticle.picture}}>
+                <h5>{{newsarticle.name}}</h5> 
+                <p>{{newsarticle.content}}</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>  
+      <!-- End Article Pictures Primary -->
 
+      <!-- Article Pictures Secondary -->
+      <div class="col-md-12 container-fluid">
+
+        <div class="header"><h2>Videos</h2></div>
+        <div class="container-fluid container-inset">
+          <div data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:4">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="featuredpic featured-sites">
+                <img src={{newsarticle.picture}}>
+                <h5>{{newsarticle.name}}</h5> 
+                <p>{{newsarticle.content}}</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>  
+      <!-- End Article Pictures Secondary -->
+
+    </section>
+    <!-- End Main Page -->
   </section>
-  </div>
-  <!-- End Latest News -->
-  <!-- End Main News Section -->
 
-  <!-- Article Pictures Primary -->
-  <div class="col-md-12 container-fluid">
-
-    <div class="header"><h2>Other Stuff</h2></div>
-    <div class="container-fluid container-inset">
-      <div data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:4">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="featuredpic featured-sites">
-            <img src={{newsarticle.picture}}>
-            <h5>{{newsarticle.name}}</h5> 
-            <p>{{newsarticle.content}}</p>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </div>  
-  <!-- End Article Pictures Primary -->
-
-  <!-- Article Pictures Secondary -->
-  <div class="col-md-12 container-fluid">
-
-    <div class="header"><h2>Videos</h2></div>
-    <div class="container-fluid container-inset">
-      <div data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:4">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="featuredpic featured-sites">
-            <img src={{newsarticle.picture}}>
-            <h5>{{newsarticle.name}}</h5> 
-            <p>{{newsarticle.content}}</p>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </div>  
-  <!-- End Article Pictures Secondary -->
-
-</section>
-<!-- End Main Page -->
-
-<div ng-include="'components/footer/footer.html'"></div>
+  <div ng-include="'components/footer/footer.html'"></div>
 
 </div>

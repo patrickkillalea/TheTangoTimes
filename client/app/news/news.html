@@ -1,21 +1,63 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="backgroundcolor">
 
-<section class="container">
+  <div ng-include="'components/navbar/navbar.html'"></div>
+  <section class="container containercolor">
+    <section class="container">
 
-  <div class="col-md-12 featured-sites container-fluid">
-    <h1 class="page-header">News:</h1>
-    <div ng-repeat="newsarticle in awesomeNewsarticles">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="largenewspic container-fluid container-inset">
-           <h1>{{newsarticle.name}}</h1>
-           <img src={{newsarticle.picture}}>
-           <h3>{{newsarticle.author}}  {{newsarticle.createddate}}</h3>
-           <p>{{newsarticle.content}}</p>
-         </div>
-       </div>
-     </div>
+      <div class="col-md-12 featured-sites container-fluid">
 
-     <form class="newsarticle-form">
+        <div ng-repeat="newsarticle in awesomeNewsarticles | limitTo:1">
+        <!-- <div data-ng-controller="NewsCtrl" data-ng-init="findOne({{newsarticle._id}})"> -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="container-fluid container-inset">
+
+<chosenArticle data=""></chosenArticle>
+
+<div data-ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="x in names">
+  {{ x.name + ', ' + x.country }}</li>
+</ul>
+
+</div>
+
+             <h1>{{newsarticle.name}}</h1>
+             <h3>{{newsarticle.author}}  {{newsarticle.createddate}}</h3>
+             <div class="col-md-9 col-sm-12 col-xs-12 largenewspic">
+               <img src={{newsarticle.picture}}>
+             </div>
+
+             <section data-ng-init="find()">
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <ul class="navigation">
+                  <li data-ng-repeat="newsarticle in awesomeNewsarticles | limitTo:8">
+                    <a data-ng-href="/news/{{newsarticle._id}}">
+                      <span>{{newsarticle.name}}</span> -
+                      <span>{{newsarticle.author}}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div> 
+            </section>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <p>{{newsarticle.content}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<div ng-include="'components/footer/footer.html'"></div>
+
+</div>
+     <!-- <form class="newsarticle-form">
       <label>Syncs in realtime across clients</label>
       <p class="input-group">
         <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newNewsarticle">
@@ -23,7 +65,5 @@
           <button type="submit" class="btn btn-primary" ng-click="addNewsarticle()">Add New</button>
         </span>
       </p>
-    </form>
-  </div>
-</section>
-<div ng-include="'components/footer/footer.html'"></div>
+    </form> -->
+
